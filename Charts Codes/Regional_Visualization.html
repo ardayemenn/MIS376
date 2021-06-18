@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['treemap']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Location',                 'Parent', 'Unemployment (rate)',                'Color rate'],
+          ['Turkey',                       null,             0,                               0],
+          ['Marmara',                  'Turkey',             0,                               0],
+          ['Aegean',                   'Turkey',             0,                               0],
+          ['BlackSea',                 'Turkey',             0,                               0],
+          ['Mediterranean',            'Turkey',             0,                               0],
+          ['Anatolia',                 'Turkey',             0,                               0],
+          ['SoutheasternAnatolia',    'Turkey',             0,                                0],
+          ['EasternAnatolia',         'Turkey',             0,                                0],
+          ['Edirne',                  'Marmara',           9.0,                              34],
+          ['Istanbul',                'Marmara',          14.7,                              12],
+          ['Kocaeli',                 'Marmara',          12.2,                              20],
+          ['Bursa',                   'Marmara',           9.6,                              30],
+          ['Balikesir',               'Marmara',           7.8,                              44],
+          ['Izmir',                    'Aegean',          17.1,                               2],
+          ['Manisa',                   'Aegean',           8.3,                              40],
+          ['Denizli',                  'Aegean',           9.6,                              30],
+          ['Trabzon',               'BlackSea',           8.8,                               36],
+          ['Samsun',                'BlackSea',          8.3,                                40],
+          ['Zonguldak',             'BlackSea',          9.3,                                32],
+          ['Kastamonu',             'BlackSea',           6.6,                               50],
+          ['Adana',             'Mediterranean',          13.4,                              15],
+          ['Antalya',           'Mediterranean',          12.2,                              20],
+          ['Hatay',             'Mediterranean',          15.2,                              10],
+          ['Ankara',                 'Anatolia',          14.8,                              12],
+          ['Kirikkale',              'Anatolia',            12,                              21],
+          ['Konya',                  'Anatolia',             8,                              42],
+          ['Kayseri',                'Anatolia',          12.8,                              18],
+          ['Diyarbakir','SoutheasternAnatolia',          33.5,                              -40],
+          ['Gaziantep', 'SoutheasternAnatolia',            13,                               16],
+          ['Sanliurfa', 'SoutheasternAnatolia',          20.1,                               -8],
+          ['Agri',           'EasternAnatolia',          11.4,                               26],
+          ['Erzurum',        'EasternAnatolia',          10.1,                               28],
+          ['Malatya',        'EasternAnatolia',          10.6,                               27],
+          ['Van',            'EasternAnatolia',          23.6,                              -16],
+        ]);
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#B71C1C',
+          midColor: '#FF9800',
+          maxColor: '#FBE9E7',
+          headerHeight: 30,
+          fontColor: 'black',
+          showScale: true
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 50%; height: 50%;"></div>
+  </body>
+</html>

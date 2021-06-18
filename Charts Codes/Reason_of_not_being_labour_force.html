@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Causes',                                   'Male', 'Female', 'Total'],
+          ['Discouraged workers',                       840, 875, 1714],
+          ['Available to work but not seeking work',    667, 1234, 1901],
+          ['Seeking work but not available',            71, 56, 127],
+          ['Housewife',                                 0, 9635, 9635],
+          ['Education/ Training',                       2329, 2636, 4965],
+          ['Retired',                                   3575, 1298, 4874],
+          ['Disabled, old, ill etc.',                   1569, 3522, 5091],
+          ['Other',                                     614, 2732, 3346]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Reasons of not being in labour force ',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 1280px; height: 700px;"></div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Search Methods',                     'Number of Unemployed'],
+          ['Direct application to employers',              2600],
+          ['Friends, relatives etc.',                       3619],
+          ['Contact with Turkish Employment Office',        1505],
+          ['Contact with private employment agencies',      1104],
+          ['Study advertisements in newspapers or journals', 1277],
+          ['Insert or answer advertisements in newspapers', 184],
+          ['Apply job by online ',                           908],
+          ['Take a test, interview or examination',            348],
+          ['Make preparations to establish your own business', 281]
+        ]);
+
+        var options = {
+          title: 'Unemployment by job search methods',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 1280px; height: 700px;"></div>
+  </body>
+</html>

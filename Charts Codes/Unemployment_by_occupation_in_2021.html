@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Job', 'Male', 'Female'],
+          ['Managers',                            61,       23],
+          ['Professionals',                       261,     328],
+          ['Cleeical support workers',            159,     271],
+          ['Service and Sales workers',           591,     377],
+          ['Craft and related trades workers',    479,      41],
+          ['Elementary occupations',              557,      318],
+        ]);
+
+        var options = {
+          title: 'Unemployment by Occupation In 2021',
+          hAxis: {title: 'Job',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  <body>
+</html>
